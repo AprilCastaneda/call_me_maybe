@@ -60,7 +60,7 @@ class BusinessCardScreenState extends State<BusinessCardScreen> {
               child:
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 Text(
-                  'The Best Kitty',
+                  'The Goodest Boi',
                   style: Theme.of(context).textTheme.subtitle1,
                 )
               ]),
