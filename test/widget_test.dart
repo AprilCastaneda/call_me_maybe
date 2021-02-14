@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flower_power/app.dart';
+import 'package:call_me_maybe/app.dart';
 //import 'package:flower_power/main.dart';
 
 void main() {

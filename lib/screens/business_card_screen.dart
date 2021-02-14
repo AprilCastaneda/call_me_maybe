@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class BusinessCardScreen extends StatelessWidget {
+class BusinessCardScreen extends StatefulWidget {
+  State createState() => BusinessCardScreenState();
+}
+
+class BusinessCardScreenState extends State<BusinessCardScreen> {
   // final String title;
 
   // const BusinessCardScreen({Key key, this.title}) : super(key: key);
@@ -12,6 +17,10 @@ class BusinessCardScreen extends StatelessWidget {
   double paddingVertical(BuildContext context) {
     return MediaQuery.of(context).size.height * 0.05;
   }
+
+  void visitPage(String url) => launch('$url');
+  void sendSMS(String number) => launch('sms:$number');
+  void sendEmail(String email) => launch('mailto:$email');
 
   @override
   Widget build(BuildContext context) {
@@ -64,10 +73,13 @@ class BusinessCardScreen extends StatelessWidget {
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          '555 555 5555',
-                          style: Theme.of(context).textTheme.subtitle2,
-                        )
+                        GestureDetector(
+                            onTap: () => sendSMS(''),
+                            child: Container(
+                                child: Text(
+                              '888 555 5512',
+                              style: Theme.of(context).textTheme.subtitle2,
+                            )))
                       ]),
                 ),
                 Flexible(
@@ -76,14 +88,22 @@ class BusinessCardScreen extends StatelessWidget {
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Text(
-                          'github.com',
-                          style: Theme.of(context).textTheme.bodyText1,
+                        GestureDetector(
+                          onTap: () => visitPage('https://github.com'),
+                          child: Container(
+                            child: Text(
+                              'github.com',
+                              style: Theme.of(context).textTheme.bodyText1,
+                            ),
+                          ),
                         ),
-                        Text(
-                          'keane@gmail.com',
-                          style: Theme.of(context).textTheme.bodyText1,
-                        )
+                        GestureDetector(
+                            onTap: () => sendEmail(''),
+                            child: Container(
+                                child: Text(
+                              'keane@gmail.com',
+                              style: Theme.of(context).textTheme.bodyText1,
+                            )))
                       ]),
                 ),
               ],
