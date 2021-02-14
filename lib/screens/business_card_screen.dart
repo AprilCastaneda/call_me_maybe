@@ -28,7 +28,7 @@ class BusinessCardScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Flexible(
-                  fit: FlexFit.loose,
+                  fit: FlexFit.tight,
                   flex: 4,
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -36,15 +36,13 @@ class BusinessCardScreen extends StatelessWidget {
                 ),
                 Flexible(
                   fit: FlexFit.tight,
-                  flex: 1,
+                  flex: 2,
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           'Keane',
-                          style: DefaultTextStyle.of(context)
-                              .style
-                              .apply(fontSizeFactor: 1.5, fontWeightDelta: 2),
+                          style: Theme.of(context).textTheme.headline6,
                         )
                       ]),
                 ),
@@ -53,21 +51,40 @@ class BusinessCardScreen extends StatelessWidget {
                   flex: 1,
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [Text('The Best Kitty')]),
+                      children: [
+                        Text(
+                          'The Best Kitty',
+                          style: Theme.of(context).textTheme.subtitle1,
+                        )
+                      ]),
                 ),
                 Flexible(
                   fit: FlexFit.tight,
-                  flex: 1,
+                  flex: 2,
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [Text('555 555 5555')]),
+                      children: [
+                        Text(
+                          '555 555 5555',
+                          style: Theme.of(context).textTheme.subtitle2,
+                        )
+                      ]),
                 ),
                 Flexible(
                   fit: FlexFit.tight,
                   flex: 1,
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [Text('website 1'), Text('website deux')]),
+                      children: [
+                        Text(
+                          'github.com',
+                          style: Theme.of(context).textTheme.bodyText1,
+                        ),
+                        Text(
+                          'keane@gmail.com',
+                          style: Theme.of(context).textTheme.bodyText1,
+                        )
+                      ]),
                 ),
               ],
             ),

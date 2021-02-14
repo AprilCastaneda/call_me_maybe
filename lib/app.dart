@@ -35,7 +35,12 @@ class MainTabController extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Call Me Maybe',
-      theme: ThemeData(primarySwatch: Colors.yellow),
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Colors.yellow[800],
+        accentColor: Colors.blue,
+        fontFamily: 'Georgia',
+      ),
       home: DefaultTabController(
         length: tabs.length,
         initialIndex: 0,
