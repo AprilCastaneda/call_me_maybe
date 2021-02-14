@@ -40,6 +40,9 @@ class MainTabController extends StatelessWidget {
         primaryColor: Colors.yellow[800],
         accentColor: Colors.blue,
         fontFamily: 'Verdana',
+        textTheme: TextTheme(
+            headline4: TextStyle(color: Colors.blue),
+            subtitle1: TextStyle(color: Colors.lightBlueAccent)),
       ),
       home: DefaultTabController(
         length: tabs.length,

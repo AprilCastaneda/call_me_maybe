@@ -50,7 +50,7 @@ class BusinessCardScreenState extends State<BusinessCardScreen> {
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 Text(
                   'Keane',
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.headline4,
                 )
               ]),
             ),
@@ -83,7 +83,7 @@ class BusinessCardScreenState extends State<BusinessCardScreen> {
               fit: FlexFit.tight,
               flex: 1,
               child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     GestureDetector(
                       onTap: () => visitPage('https://github.com'),
