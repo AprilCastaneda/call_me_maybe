@@ -149,7 +149,7 @@ class _ResumeScreenState extends State<ResumeScreen> {
     return Column(
       children: [
         Row(children: [
-          Text('${jobs[idx].jobTitle}',
+          Text('${jobs[idx].title}',
               style: Theme.of(context).textTheme.headline6)
         ]),
         Row(children: [
@@ -158,7 +158,7 @@ class _ResumeScreenState extends State<ResumeScreen> {
             flex: 1,
             child: Align(
               alignment: Alignment.centerLeft,
-              child: Text('${jobs[idx].coName}',
+              child: Text('${jobs[idx].companyName}',
                   style: Theme.of(context).textTheme.bodyText2),
             ),
           ),
@@ -167,7 +167,7 @@ class _ResumeScreenState extends State<ResumeScreen> {
             flex: 1,
             child: Align(
               alignment: Alignment.center,
-              child: Text('${jobs[idx].fromYr} - ${jobs[idx].toYr}',
+              child: Text('${jobs[idx].fromYear} - ${jobs[idx].toYear}',
                   style: Theme.of(context).textTheme.bodyText2),
             ),
           ),
@@ -176,14 +176,14 @@ class _ResumeScreenState extends State<ResumeScreen> {
             flex: 1,
             child: Align(
               alignment: Alignment.centerRight,
-              child: Text('${jobs[idx].loc}',
+              child: Text('${jobs[idx].location}',
                   style: Theme.of(context).textTheme.bodyText2),
             ),
           )
         ]),
         Row(children: [
           Expanded(
-            child: Text('${jobs[idx].desc}',
+            child: Text('${jobs[idx].description}',
                 style: Theme.of(context).textTheme.bodyText1),
           )
         ]),

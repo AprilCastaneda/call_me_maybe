@@ -3,26 +3,23 @@ import 'package:flutter/material.dart';
 import 'screens/business_card_screen.dart';
 import 'screens/resume_screen.dart';
 import 'screens/predictor_screen.dart';
+import 'styles.dart';
 
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Call Me Maybe',
-        theme: ThemeData(primarySwatch: Colors.blue),
+        theme: Styles.cmmTheme,
         home: MainTabController());
   }
 }
 
 class MainTabController extends StatelessWidget {
   static const tabs = [
-    // Tab(icon: Icon(Icons.face)),
     Tab(icon: Icon(Icons.pets)),
     Tab(icon: Icon(Icons.assignment)),
     Tab(icon: Icon(Icons.help_outline)),
-    // Tab(text: 'Business Card'),
-    // Tab(text: 'Resume'),
-    // Tab(text: 'Predictor'),
   ];
 
   final screens = [
@@ -35,15 +32,7 @@ class MainTabController extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Call Me Maybe',
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        primaryColor: Colors.yellow[800],
-        accentColor: Colors.blue,
-        fontFamily: 'Verdana',
-        textTheme: TextTheme(
-            headline4: TextStyle(color: Colors.blue),
-            subtitle1: TextStyle(color: Colors.lightBlueAccent)),
-      ),
+      theme: Styles.cmmTheme,
       home: DefaultTabController(
         length: tabs.length,
         initialIndex: 0,

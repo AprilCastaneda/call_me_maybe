@@ -35,7 +35,7 @@ class _PredictorScreenState extends State<PredictorScreen> {
                 });
               },
               child: Text(
-                'Ask a question... tap for the Answer',
+                'Ask a question... TAP for the Answer',
                 style: Theme.of(context).textTheme.subtitle1,
               ),
             ),

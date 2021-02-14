@@ -16,12 +16,10 @@ class Job {
       this.loc,
       this.desc});
 
-  Job.genericJob() {
-    jobTitle = 'Job title here';
-    coName = 'Company name here';
-    fromYr = 2020;
-    toYr = 2121;
-    loc = 'Job Location here';
-    desc = 'Job Description here';
-  }
+  String get title => jobTitle;
+  String get companyName => coName;
+  int get fromYear => fromYr;
+  int get toYear => toYr;
+  String get location => loc;
+  String get description => desc;
 }
