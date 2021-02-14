@@ -156,20 +156,29 @@ class _ResumeScreenState extends State<ResumeScreen> {
           Flexible(
             fit: FlexFit.tight,
             flex: 1,
-            child: Text('${jobs[idx].coName}',
-                style: Theme.of(context).textTheme.bodyText2),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text('${jobs[idx].coName}',
+                  style: Theme.of(context).textTheme.bodyText2),
+            ),
           ),
           Flexible(
             fit: FlexFit.tight,
             flex: 1,
-            child: Text('${jobs[idx].fromYr} - ${jobs[idx].toYr}',
-                style: Theme.of(context).textTheme.bodyText2),
+            child: Align(
+              alignment: Alignment.center,
+              child: Text('${jobs[idx].fromYr} - ${jobs[idx].toYr}',
+                  style: Theme.of(context).textTheme.bodyText2),
+            ),
           ),
           Flexible(
             fit: FlexFit.tight,
             flex: 1,
-            child: Text('${jobs[idx].loc}',
-                style: Theme.of(context).textTheme.bodyText2),
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: Text('${jobs[idx].loc}',
+                  style: Theme.of(context).textTheme.bodyText2),
+            ),
           )
         ]),
         Row(children: [
