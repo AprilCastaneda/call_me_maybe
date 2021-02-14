@@ -5,14 +5,14 @@ class Answer {
   String _currentAnswer = 'Hmmm... don\'t know yet';
 
   final answers = [
-    'But, of course!',
-    'As I see it, yes',
-    'Don\'t count on it',
-    'It is known',
-    'Meow-yes',
-    'My reply is no',
-    'My sources say no',
-    'Outlook not so good'
+    'I am feline good about it.',
+    'I\'m paw-sitive.',
+    'Not right meow.',
+    'Yes, I\'m purr-ety sure.',
+    'No, not on purr-pose.',
+    'No. No dogs either.',
+    'Dashing through the.. No',
+    'No way! Are you kitten me?'
   ];
 
   String get currentAnswer => _currentAnswer;
