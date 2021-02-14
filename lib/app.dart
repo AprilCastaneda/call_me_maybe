@@ -33,21 +33,17 @@ class MainTabController extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return MaterialApp(
-    //   title: 'Week 5 Explorations',
-    //   theme: ThemeData(
-    //     primarySwatch: Colors.blue,
-    //   ),
-    //   home: MainScreen(title: 'Call Me Maybe'),
-    // );
-
-    return DefaultTabController(
-      length: tabs.length,
-      initialIndex: 0,
-      child: Scaffold(
-        appBar:
-            AppBar(title: Text('Call Me Maybe'), bottom: TabBar(tabs: tabs)),
-        body: TabBarView(children: screens),
+    return MaterialApp(
+      title: 'Call Me Maybe',
+      theme: ThemeData(primarySwatch: Colors.yellow),
+      home: DefaultTabController(
+        length: tabs.length,
+        initialIndex: 0,
+        child: Scaffold(
+          appBar:
+              AppBar(title: Text('Call Me Maybe'), bottom: TabBar(tabs: tabs)),
+          body: TabBarView(children: screens),
+        ),
       ),
     );
   }

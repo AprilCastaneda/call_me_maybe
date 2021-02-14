@@ -28,18 +28,25 @@ class BusinessCardScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Flexible(
-                  fit: FlexFit.tight,
-                  flex: 3,
+                  fit: FlexFit.loose,
+                  flex: 4,
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [Image.asset('assets/images/flower.png')]),
+                      children: [Image.asset('assets/images/keane.jpg')]),
                 ),
                 Flexible(
                   fit: FlexFit.tight,
-                  flex: 2,
+                  flex: 1,
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [Text('Keane')]),
+                      children: [
+                        Text(
+                          'Keane',
+                          style: DefaultTextStyle.of(context)
+                              .style
+                              .apply(fontSizeFactor: 1.5, fontWeightDelta: 2),
+                        )
+                      ]),
                 ),
                 Flexible(
                   fit: FlexFit.tight,
