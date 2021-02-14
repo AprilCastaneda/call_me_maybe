@@ -40,8 +40,12 @@ class MainTabController extends StatelessWidget {
         length: tabs.length,
         initialIndex: 0,
         child: Scaffold(
-          appBar:
-              AppBar(title: Text('Call Me Maybe'), bottom: TabBar(tabs: tabs)),
+          appBar: AppBar(
+              title: Text('Call Me Maybe'),
+              bottom: TabBar(
+                tabs: tabs,
+                indicatorColor: Colors.black,
+              )),
           body: TabBarView(children: screens),
         ),
       ),
