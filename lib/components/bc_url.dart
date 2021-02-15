@@ -2,12 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../models/url_type.dart';
-import 'bc_gesture.dart';
 
-class BCUrl extends StatelessWidget {
+class BCUrl extends StatefulWidget {
   final int flexNum;
-  // BCGesture bcGesture;
-  // BCGesture bcGesture2;
   bool two = false;
   final String text;
   final String style;
@@ -18,11 +15,6 @@ class BCUrl extends StatelessWidget {
 
   BCUrl({Key key, this.flexNum, this.text, this.style, this.urlType})
       : super(key: key);
-  // {
-  // bcGesture = BCGesture(text: text, style: style, urlType: urlType);
-  // bcGesture2 = BCGesture();
-  //   two = false;
-  // }
 
   BCUrl.Two(
       {Key key,
@@ -37,8 +29,15 @@ class BCUrl extends StatelessWidget {
     two = true;
   }
 
+  @override
+  _BCUrlState createState() => _BCUrlState();
+}
+
+class _BCUrlState extends State<BCUrl> {
   void visitPage(String url) => launch('https://$url');
+
   void sendSMS(String number) => launch('sms:$number');
+
   void sendEmail(String email) => launch('mailto:$email');
 
   void launchUrl(UrlType urlType, String text) {
@@ -61,19 +60,19 @@ class BCUrl extends StatelessWidget {
   List<Widget> smsGesture(TextStyle style) {
     return [
       GestureDetector(
-          onTap: () => launchUrl(urlType, text),
-          child: Container(child: Text(text, style: style))),
+          onTap: () => launchUrl(widget.urlType, widget.text),
+          child: Container(child: Text(widget.text, style: style))),
     ];
   }
 
   List<Widget> urlGesture(TextStyle style, TextStyle style2) {
     return [
       GestureDetector(
-          onTap: () => launchUrl(urlType, text),
-          child: Container(child: Text(text, style: style))),
+          onTap: () => launchUrl(widget.urlType, widget.text),
+          child: Container(child: Text(widget.text, style: style))),
       GestureDetector(
-          onTap: () => launchUrl(urlType2, text2),
-          child: Container(child: Text(text2, style: style2)))
+          onTap: () => launchUrl(widget.urlType2, widget.text2),
+          child: Container(child: Text(widget.text2, style: style2)))
     ];
   }
 
@@ -93,17 +92,12 @@ class BCUrl extends StatelessWidget {
     };
     return Flexible(
       fit: FlexFit.tight,
-      flex: flexNum,
+      flex: widget.flexNum,
       child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: two
-              ? urlGesture(styleMap[style], styleMap[style2])
-              : smsGesture(styleMap[style])
-          //
-          // GestureDetector(
-          //     onTap: () => launchUrl(urlType, text),
-          //     child: Container(child: Text(text, style: styleMap[style])))
-          ),
+          children: widget.two
+              ? urlGesture(styleMap[widget.style], styleMap[widget.style2])
+              : smsGesture(styleMap[widget.style])),
     );
   }
 }
