@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../styles.dart';
 
 class BCText extends StatelessWidget {
   final int flexNum;
