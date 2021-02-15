@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../components/bc_image.dart';
 import '../components/bc_text.dart';
 import '../components/bc_url.dart';
+import '../components/bc_box.dart';
 
 import '../models/url_type.dart';
 
@@ -37,25 +38,7 @@ class BusinessCardScreenState extends State<BusinessCardScreen> {
       text2: 'keane@gmail.com',
       style2: 'bodyText1',
       urlType2: UrlType.email);
-  // void visitPage(String url) => launch('https://$url');
-  // void sendSMS(String number) => launch('sms:$number');
-  // void sendEmail(String email) => launch('mailto:$email');
-
-  // void launchUrl(UrlType urlType, String text) {
-  //   switch (urlType) {
-  //     case UrlType.url:
-  //       visitPage(text);
-  //       break;
-  //     case UrlType.sms:
-  //       sendSMS(text);
-  //       break;
-  //     case UrlType.email:
-  //       sendEmail(text);
-  //       break;
-  //     default:
-  //       print('Not a valid type');
-  //       break;
-  //   }
+  final bc_box = BCBox();
 
   @override
   Widget build(BuildContext context) {
@@ -69,59 +52,7 @@ class BusinessCardScreenState extends State<BusinessCardScreen> {
             vertical: paddingVertical(context)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            bc_image,
-            bc_name,
-            bc_title,
-            bc_phone,
-            bc_urls,
-            // Flexible(
-            //     fit: FlexFit.tight,
-            //     flex: 2,
-            //     child: Row(
-            //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            //       children: [
-            //         GestureDetector(
-            //             onTap: () => launchUrl(UrlType.sms, ''),
-            //             child: Container(
-            //                 child: Text('888 555 5512',
-            //                     style: Theme.of(context).textTheme.subtitle2)))
-            //       ],
-            //     )),
-            Flexible(
-              fit: FlexFit.tight,
-              flex: MediaQuery.of(context).orientation == Orientation.portrait
-                  ? 10
-                  : 0,
-              child: SizedBox(),
-            )
-
-            // bc_urls,
-            // Flexible(
-            //   fit: FlexFit.tight,
-            //   flex: 1,
-            //   child: Row(
-            //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            //       children: [
-            //         GestureDetector(
-            //           onTap: () => visitPage('https://github.com'),
-            //           child: Container(
-            //             child: Text(
-            //               'github.com',
-            //               style: Theme.of(context).textTheme.bodyText1,
-            //             ),
-            //           ),
-            //         ),
-            //         GestureDetector(
-            //             onTap: () => sendEmail(''),
-            //             child: Container(
-            //                 child: Text(
-            //               'keane@gmail.com',
-            //               style: Theme.of(context).textTheme.bodyText1,
-            //             )))
-            //       ]),
-            // ),
-          ],
+          children: [bc_image, bc_name, bc_title, bc_phone, bc_urls, bc_box],
         ),
       ),
     );
