@@ -8,10 +8,13 @@ class BCUrl extends StatelessWidget {
   final int flexNum;
   // BCGesture bcGesture;
   // BCGesture bcGesture2;
-  // bool two = false;
+  bool two = false;
   final String text;
   final String style;
   final UrlType urlType;
+  String text2;
+  String style2;
+  UrlType urlType2;
 
   BCUrl({Key key, this.flexNum, this.text, this.style, this.urlType})
       : super(key: key);
@@ -21,11 +24,18 @@ class BCUrl extends StatelessWidget {
   //   two = false;
   // }
 
-  // BCUrl.Two({this.flexNum, text, style, urlType, text2, style2, urlType2}) {
-  //   bcGesture = BCGesture(text: text, style: style, urlType: urlType);
-  //   bcGesture2 = BCGesture(text: text2, style: style2, urlType: urlType2);
-  //   two = true;
-  // }
+  BCUrl.Two(
+      {Key key,
+      this.flexNum,
+      this.text,
+      this.style,
+      this.urlType,
+      this.text2,
+      this.style2,
+      this.urlType2})
+      : super(key: key) {
+    two = true;
+  }
 
   void visitPage(String url) => launch('https://$url');
   void sendSMS(String number) => launch('sms:$number');
@@ -48,6 +58,25 @@ class BCUrl extends StatelessWidget {
     }
   }
 
+  List<Widget> smsGesture(TextStyle style) {
+    return [
+      GestureDetector(
+          onTap: () => launchUrl(urlType, text),
+          child: Container(child: Text(text, style: style))),
+    ];
+  }
+
+  List<Widget> urlGesture(TextStyle style, TextStyle style2) {
+    return [
+      GestureDetector(
+          onTap: () => launchUrl(urlType, text),
+          child: Container(child: Text(text, style: style))),
+      GestureDetector(
+          onTap: () => launchUrl(urlType2, text2),
+          child: Container(child: Text(text2, style: style2)))
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
     final styleMap = {
@@ -65,11 +94,16 @@ class BCUrl extends StatelessWidget {
     return Flexible(
       fit: FlexFit.tight,
       flex: flexNum,
-      child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-        GestureDetector(
-            onTap: () => launchUrl(urlType, text),
-            child: Container(child: Text(text, style: styleMap[style])))
-      ]),
+      child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: two
+              ? urlGesture(styleMap[style], styleMap[style2])
+              : smsGesture(styleMap[style])
+          //
+          // GestureDetector(
+          //     onTap: () => launchUrl(urlType, text),
+          //     child: Container(child: Text(text, style: styleMap[style])))
+          ),
     );
   }
 }

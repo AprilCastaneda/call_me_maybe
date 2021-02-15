@@ -29,6 +29,14 @@ class BusinessCardScreenState extends State<BusinessCardScreen> {
       text: '888 555 5512',
       style: 'subtitle2',
       urlType: UrlType.sms);
+  final bc_urls = BCUrl.Two(
+      flexNum: 1,
+      text: 'github.com',
+      style: 'bodyText1',
+      urlType: UrlType.url,
+      text2: 'keane@gmail.com',
+      style2: 'bodyText1',
+      urlType2: UrlType.email);
   // void visitPage(String url) => launch('https://$url');
   // void sendSMS(String number) => launch('sms:$number');
   // void sendEmail(String email) => launch('mailto:$email');
@@ -66,6 +74,7 @@ class BusinessCardScreenState extends State<BusinessCardScreen> {
             bc_name,
             bc_title,
             bc_phone,
+            bc_urls,
             // Flexible(
             //     fit: FlexFit.tight,
             //     flex: 2,
