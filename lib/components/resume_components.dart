@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 
-import '../models/job.dart';
-import '../models/self.dart';
-
 import 'resume_header.dart';
 import 'resume_job_list.dart';
 import 'resume_job_row.dart';
 
-class ResumeComponents extends StatelessWidget {
+class ResumeComponents extends StatefulWidget {
+  @override
+  _ResumeComponentsState createState() => _ResumeComponentsState();
+}
+
+class _ResumeComponentsState extends State<ResumeComponents> {
   final header = ResumeHeader();
+
   ResumeJobList jobList = ResumeJobList();
 
   List<Widget> resumeBody() {

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/self.dart';
 import '../models/job.dart';
-import 'resume_job_list.dart';
 
 class ResumeJobRow extends StatelessWidget {
   final Job job;

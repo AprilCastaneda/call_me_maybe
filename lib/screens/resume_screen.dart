@@ -1,9 +1,6 @@
-import '../components/resume_components.dart';
-
-import '../models/self.dart';
-import '../models/job.dart';
-
 import 'package:flutter/material.dart';
+
+import '../components/resume_components.dart';
 
 class ResumeScreen extends StatefulWidget {
   @override
