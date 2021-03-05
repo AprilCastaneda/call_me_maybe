@@ -1,1 +1,2 @@
-# call_me_maybe
+# Call Me Maybe
+Cat Resume and "Magic Eight Ball" like fortune-teller if a possible employer will possibly call. =)
